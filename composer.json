@@ -1,0 +1,55 @@
+{
+    "name": "Wireframe Child",
+    "description": "Wireframe Child is the default WordPress child theme for Wireframe Theme. Wireframe Child is part of the Wireframe Suite for WordPress by MixaTheme.",
+    "type": "wordpress-theme",
+    "license": "GPL-3.0+",
+    "keywords": [
+        "wordpress",
+        "oop",
+        "object-oriented",
+        "wireframe",
+        "bootstrap",
+        "starter",
+        "boilerplate",
+        "responsive",
+        "mobile",
+        "theme",
+        "gpl",
+        "mixatheme"
+    ],
+    "homepage": "https://github.com/mixatheme/Wireframe",
+    "authors": [
+        {
+            "name": "Tada Burke",
+            "email": "tadaburke@users.noreply.github.com",
+            "homepage": "https://twitter.com/tadaburke",
+            "role": "Developer"
+        },
+        {
+            "name": "MixaTheme",
+            "email": "mixatheme@users.noreply.github.com",
+            "homepage": "https://mixatheme.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Neurobotic",
+            "email": "neurobotic@users.noreply.github.com",
+            "homepage": "https://neurobotic.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/mixatheme/wireframe-child/issues",
+        "source": "https://github.com/mixatheme/wireframe-child",
+        "docs": "https://github.com/mixatheme/wireframe-child/wiki"
+    },
+    "config": {
+        "vendor-dir": "wireframe_dev/vendor",
+        "archive-format": "zip"
+    },
+    "autoload": {
+        "psr-0": {
+            "MixaTheme\\Wireframe\\Theme\\": "wireframe_dev/wireframe"
+        }
+    }
+}

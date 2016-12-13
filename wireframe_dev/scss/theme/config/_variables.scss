@@ -1,0 +1,33 @@
+// Icons.
+$icon_size:     14px;
+$icon_top:      2px;
+$icon_right:    10px;
+$icon_bottom:   0;
+$icon_left:     10px;
+$icon_color:    #666;
+
+// Z-index.
+$z_tier1:       1;          // General purpose.
+$z_tier2:       8888;       // Primarily for CTAs.
+$z_important:   9999;       // Primarily for Navbars and Exits.
+$z_bonkers:     2147483647; // 32-bit cray-cray. WTF?
+
+// FA Folders
+$fa_archive:    "\f073"; // f073, f187, f274, f187
+$fa_folder:     "\f07b";
+
+// FA Files
+$fa_file:       "\f15b"; // dark solid
+$fa_file_text:  "\f15c"; // dark solid
+$fa_file_o:     "\f016"; // light lines
+$fa_file_text_o:"\f0f6"; // light lines
+
+// FA Comments
+$fa_comment:    "\f075"; // dark solid
+$fa_comment_o:  "\f27b"; // light dots
+
+// TBD
+$fa_user:       "\f007";
+$fa_lock:       "\f023";
+$fa_rss:        "\f09e";
+$fa_wp:         "\f19a";

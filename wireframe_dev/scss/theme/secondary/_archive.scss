@@ -1,0 +1,17 @@
+.widget_archive {}
+.widget_archive h2.widget-title {}
+.widget_archive ul {
+	@include reset_widget();
+}
+
+.widget_archive ul li:before {
+	content: $fa_archive;
+	@include icon-fa();
+}
+
+.widget_archive ul li {
+	@include list_icons();
+	//@include list_buttons();
+}
+
+.widget_archive ul li a {}

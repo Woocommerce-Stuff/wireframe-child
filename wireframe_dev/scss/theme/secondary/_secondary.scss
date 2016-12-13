@@ -1,0 +1,18 @@
+// Global styles for all widgets.
+.widget {
+	@include reset_widget();
+}
+
+.widget-title {
+	//@include widget_title_dark();
+	@include widget_title_light();
+}
+
+.widget ul {
+	@include reset_widget_list();
+	//padding-left: 10px;
+}
+
+.widget li {
+	padding-left: 10px;
+}

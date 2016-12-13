@@ -1,0 +1,42 @@
+// Meta widget
+.widget_meta {}
+.widget_meta h2.widget-title {}
+.widget_meta ul {
+	@include reset_widget();
+}
+
+.widget_meta ul li {
+	@include list_icons();
+}
+
+.widget_meta ul li.meta-site-admin:before {
+	content: $fa_user;
+	@include icon_fa();
+}
+
+.widget_meta ul li.meta-log-in:before {
+	content: $fa_lock;
+	@include icon_fa();
+}
+
+.widget_meta ul li.meta-log-out:before {
+	content: $fa_lock;
+	@include icon_fa();
+}
+
+.widget_meta ul li.meta-entries-rss:before {
+	content: $fa_rss;
+	@include icon_fa();
+}
+
+.widget_meta ul li.meta-comments-rss:before {
+	content: $fa_rss;
+	@include icon_fa();
+}
+
+.widget_meta ul li.meta-wordpress:before {
+	content: $fa_wp;
+	@include icon_fa();
+}
+
+.widget_meta ul li a {}

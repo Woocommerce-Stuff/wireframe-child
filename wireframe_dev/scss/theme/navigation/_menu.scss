@@ -1,0 +1,34 @@
+// Medium Devices, Desktop.
+@media only screen and (min-width : 768px) {
+	// @see http://stackoverflow.com/questions/19576175
+	.navbar-nav > li > a, .navbar-brand {
+		padding-top: 25px !important;
+		padding-bottom: 0 !important;
+		height: 70px;
+	}
+	.navbar {
+		min-height: 50px !important;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.navbar-toggle {
+		background-color: transparent;
+		border: 1px solid #ccc;
+	}
+	.navbar-toggle .icon-bar {
+		background: #ccc;
+	}
+}
+
+.navbar-transparent .navbar-toggle {
+	border-color: #ddd;
+}
+
+.navbar-transparent .navbar-toggle .icon-bar {
+	background-color: #888;
+}
+
+.navbar-transparent .navbar-toggle:hover {
+	background-color: #ddd;
+}

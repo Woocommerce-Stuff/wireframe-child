@@ -1,0 +1,59 @@
+.sticky {
+    display: block;
+}
+
+.hentry {
+    margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published){
+    display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+    display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+// Category list.
+.cat-links {
+    display: block;
+    margin-bottom: 5px;
+}
+
+// Tag list.
+.tags-links {
+    display: block;
+}
+
+// Posts Navigation.
+.posts-navigation {
+
+}
+
+.nav-previous {
+    @include widget_title_light();
+}
+
+.nav-next {
+    @include widget_title_light();
+
+}
+
+// Break long titles.
+.entry-title {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}

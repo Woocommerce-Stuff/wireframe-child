@@ -1,0 +1,275 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0 Wireframe_Child\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2016-12-02 13:15-0500\n"
+"PO-Revision-Date: 2016-12-02 13:15-0500\n"
+"Last-Translator: MixaTheme <mixatheme@users.noreply.github.com>\n"
+"Language-Team: MixaTheme\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_c;"
+"_nc:4c,1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:41
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: 404.php:49
+msgid ""
+"It looks like nothing was found at this location. Maybe try a new search?"
+msgstr ""
+
+#: comments.php:48
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:57 comments.php:78
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:60 comments.php:81
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:61 comments.php:82
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:95
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:37
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:38
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:43
+#, php-format
+msgid "%1$s by %2$s."
+msgstr ""
+
+#: header.php:48
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:76
+msgid "Toggle navigation"
+msgstr ""
+
+#: search.php:39
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: wireframe_client/template-parts/content-none.php:32
+msgid "Nothing Found"
+msgstr ""
+
+#: wireframe_client/template-parts/content-none.php:38
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: wireframe_client/template-parts/content-none.php:42
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: wireframe_client/template-parts/content-none.php:52
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: wireframe_client/template-parts/content-page.php:47
+#: wireframe_client/template-parts/content.php:62
+msgid "Pages:"
+msgstr ""
+
+#: wireframe_client/template-parts/content-page.php:60
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: wireframe_client/template-parts/content.php:57
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:313
+msgid "Eenie"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:314
+msgid "Meenie"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:315
+msgid "Mynee"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:316
+msgid "Mo"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:318
+msgid "Example Control"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:319
+msgid ""
+"Just an example custom control. To modify $controls, see the Customizer "
+"section in your functions.php file."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:329
+msgid "Logo Margin Top"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:330
+#: wireframe_dev/wireframe/config/config-customizer.php:341
+#: wireframe_dev/wireframe/config/config-customizer.php:352
+#: wireframe_dev/wireframe/config/config-customizer.php:363
+#: wireframe_dev/wireframe/config/config-customizer.php:374
+#: wireframe_dev/wireframe/config/config-customizer.php:384
+#: wireframe_dev/wireframe/config/config-customizer.php:394
+msgid "Descriptions goes here..."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:340
+msgid "Logo Margin Left"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:351
+msgid "Logo Margin Right"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:362
+msgid "Logo Margin Bottom"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:373
+msgid "Display Site Title in Navbar?"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:383
+msgid "Link Color"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:393
+msgid "Main Text Color"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:405
+msgid "Dark"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:406
+msgid "Light"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:407
+msgid "Transparent"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:409
+msgid "Navbar Contrast"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:410
+msgid "The navbar contrast to best match your design."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:440
+msgid "Example Panel"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:441
+msgid ""
+"Just an example of a custom panel. To modify $panels, see the Customizer "
+"section in your functions.php file."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:461
+msgid "Example Section"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-customizer.php:462
+msgid ""
+"Just an example of a custom section. To modify $sections, see the Customizer "
+"section in your functions.php file."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-editor.php:141
+msgid "Bootstrap Lead"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-editor.php:148
+msgid "Bootstrap Marked"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-editor.php:152
+msgid "Bootstrap Code"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-editor.php:156
+msgid "Bootstrap KBD"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-features.php:277
+msgid "Primary Menu"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-features.php:278
+msgid "Secondary Menu"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-features.php:279
+msgid "Social Links Menu"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-widgets.php:116
+msgid "Primary"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-widgets.php:118
+msgid "Add important widgets here."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-widgets.php:125
+msgid "Secondary"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-widgets.php:127
+msgid "Add secondary widgets here."
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-widgets.php:134
+msgid "Tertiary"
+msgstr ""
+
+#: wireframe_dev/wireframe/config/config-widgets.php:136
+msgid "Add tertiary widgets here."
+msgstr ""

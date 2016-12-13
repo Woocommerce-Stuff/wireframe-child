@@ -1,0 +1,57 @@
+// Recent Posts widget
+.widget_recent_entries {}
+.widget_recent_entries h2.widget-title {}
+.widget_recent_entries ul {
+	@include reset_widget();
+}
+
+.widget_recent_entries ul li:before {
+	content: $fa_file_text;
+	@include icon_fa();
+}
+
+.widget_recent_entries ul li {
+	@include list_icons();
+	@include list_icons_nowrap();
+}
+
+.widget_recent_entries ul li:after {
+	@include list_icons_separator();
+}
+
+.widget_recent_entries ul li:last-of-type:after {
+	border-bottom: none;
+}
+
+.widget_recent_entries ul li a {}
+
+#mixa-recent-posts-list {}
+.mixa-recent-posts-card {
+	margin: 0 0 5px 0;
+	vertical-align: top;
+}
+
+.mixa-recent-posts-card:after {
+	@include list_icons_separator();
+}
+
+.mixa-recent-posts-card:last-of-type:after {
+	border-bottom: none;
+}
+
+.mixa-recent-posts-card img {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+.mixa-recent-posts-card span {
+	display: block;
+}
+
+.mixa-recent-posts-card .recent-post-title {
+	font-size: 1.10em;
+}
+
+.mixa-recent-posts-card .recent-post-date {
+	font-size: 0.85em;
+}

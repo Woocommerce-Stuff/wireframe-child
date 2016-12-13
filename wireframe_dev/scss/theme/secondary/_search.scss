@@ -1,0 +1,24 @@
+// Search widget
+.widget_search {
+
+}
+
+form.search-form {
+	position: relative;
+	font-weight: normal;
+	margin-top: 20px;
+}
+
+form.search-form input {
+	font-weight: normal;
+}
+
+form.search-form label {
+	display: block;
+}
+
+form.search-form .btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+}

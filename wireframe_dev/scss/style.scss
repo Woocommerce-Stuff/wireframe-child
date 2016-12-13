@@ -1,0 +1,63 @@
+/*!
+Theme Name:     Wireframe Child
+Version:        1.0.0
+Author:         MixaTheme, Tada Burke
+Theme URI:      https://github.com/mixatheme/Wireframe/
+Author URI:     https://mixatheme.com/
+Text Domain:    wireframe-child
+Template:       wireframe-theme
+License:        GPL-3.0+
+License URI:    http://www.gnu.org/licenses/gpl-3.0.html
+Description:    Wireframe Child is the default child theme for Wireframe Theme.
+Tags:           grid-layout, one-column, two-columns, right-sidebar, accessibility-ready, buddypress, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio
+
+Copyright (C) 2016-2017 MixaTheme. All rights reserved.
+
+This software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this software. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+// Framework: Config.
+@import "framework/bootstrap/variables";
+@import "framework/bootstrap/mixins";
+
+// Theme: Config.
+@import "theme/config/variables";
+@import "theme/config/mixins";
+
+// Theme: Components.
+@import "theme/components/buttons";
+@import "theme/components/forms";
+@import "theme/components/tables";
+
+// Theme: Header.
+@import "theme/header/header";
+
+// Theme: Menu.
+@import "theme/navigation/menu";
+
+// Theme: Primary.
+@import "theme/primary/posts-and-pages";
+@import "theme/primary/comments";
+
+// Theme: Secondary.
+@import "theme/secondary/secondary";
+@import "theme/secondary/archive";
+@import "theme/secondary/calendar";
+@import "theme/secondary/archive";
+@import "theme/secondary/categories";
+@import "theme/secondary/meta";
+@import "theme/secondary/nav-menus";
+@import "theme/secondary/pages";
+@import "theme/secondary/recent-comments";
+@import "theme/secondary/recent-entries";
+@import "theme/secondary/search";
+@import "theme/secondary/tag-cloud";
+
+// Theme: Colophon.
+@import "theme/colophon/footer";

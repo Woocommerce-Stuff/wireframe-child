@@ -1,0 +1,27 @@
+// Recent Comments widget
+.widget_recent_comments {}
+.widget_recent_comments h2.widget-title {}
+ul#recentcomments {
+	@include reset_widget();
+}
+
+li.recentcomments:before {
+	content: $fa_comment;
+	@include icon_fa();
+}
+
+li.recentcomments {
+	@include list_icons();
+	@include list_icons_nowrap();
+}
+
+li.recentcomments:after {
+	@include list_icons_separator();
+}
+
+li.recentcomments:last-of-type:after {
+	border-bottom: none;
+}
+
+li.recentcomments span.comment-author-link {}
+li.recentcomments a {}

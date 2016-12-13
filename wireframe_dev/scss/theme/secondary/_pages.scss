@@ -1,0 +1,31 @@
+// widget_pages
+.widget_pages {}
+.widget_pages h2.widget-title {}
+.widget_pages ul {
+	@include reset_widget();
+}
+
+.widget_pages ul li:before {
+	content: $fa_file;
+	@include icon_fa();
+	margin-left: 0; // Poor mans override.
+}
+
+.widget_pages ul li {
+	@include list_icons();
+	padding-left: 14px;
+}
+
+.widget_pages ul:not(.sub-menu) {
+	// FPO  
+}
+
+.widget_pages ul li:after {
+	@include list_icons_separator();
+}
+
+.widget_pages ul li:last-of-type:after {
+	border-bottom: none;
+}
+
+.widget_pages ul li a {}
