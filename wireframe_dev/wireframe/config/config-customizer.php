@@ -4,11 +4,11 @@
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Child
+ * @package   Wireframe_Theme
  * @author    MixaTheme, Tada Burke
  * @version   1.0.0 Wireframe_Child
- * @copyright 2016-2017 MixaTheme
- * @license   GPL-3.0+
+ * @copyright 2016 MixaTheme
+ * @license   GPL-2.0+
  * @see       https://mixatheme.com
  * @see       https://github.com/mixatheme/Wireframe
  *
@@ -112,7 +112,7 @@ function wireframe_theme_config_customizer() {
 	/**
 	 * Filters.
 	 *
-	 * Most objects don't generally need filters here, but you have the option.
+	 * Objects don't generally need filters here, but you have the option.
 	 * You can set your filters in a multi-dimensional array and remember
 	 * to set the property $wired = true (above).
 	 *
@@ -128,15 +128,7 @@ function wireframe_theme_config_customizer() {
 	 * @since 1.0.0 Wireframe_Child
 	 * @var   array $styles Array of stylesheets to enqueue.
 	 */
-	$styles = array(
-		'fontawesome' => array(
-			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
-			'file'  => 'font-awesome-min',
-			'deps'  => array(),
-			'media' => 'all',
-
-		),
-	);
+	$styles = array();
 
 	/**
 	 * Scripts to load.
@@ -148,7 +140,7 @@ function wireframe_theme_config_customizer() {
 	 */
 	$scripts = array(
 		'live_preview' => array(
-			'path'     => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'path'     => WIREFRAME_THEME_JS,
 			'file'     => 'preview-scripts-min',
 			'deps'     => array( 'jquery', 'customize-preview' ),
 			'footer'   => false,
@@ -201,54 +193,6 @@ function wireframe_theme_config_customizer() {
 			'capability'        => 'edit_theme_options',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-		),
-		'navbar_title',
-		array(
-			'default'           => 'show',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-		'navbar_contrast',
-		array(
-			'default'           => 'inverse',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-		'logo_top',
-		array(
-			'default'           => '10px',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-		'logo_left',
-		array(
-			'default'           => '10px',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-		'logo_right',
-		array(
-			'default'           => '10px',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		),
-		'logo_bottom',
-		array(
-			'default'           => '10px',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
 		),
 	);
 
@@ -325,61 +269,6 @@ function wireframe_theme_config_customizer() {
 			'active_callback' => '',
 			'control_class'   => null,
 		),
-		'logo_top',
-		array(
-			'section'         => 'title_tagline',
-			'settings'        => 'logo_top',
-			'priority'        => 9,
-			'type'            => 'text',
-			'label'           => __( 'Logo Margin Top', 'wireframe-theme' ),
-			'description'     => __( 'Descriptions goes here...', 'wireframe-theme' ),
-			'active_callback' => '',
-			'control_class'   => 'WP_Customize_Control',
-		),
-		'logo_left',
-		array(
-			'section'         => 'title_tagline',
-			'settings'        => 'logo_left',
-			'priority'        => 9,
-			'type'            => 'text',
-			'label'           => __( 'Logo Margin Left', 'wireframe-theme' ),
-			'description'     => __( 'Descriptions goes here...', 'wireframe-theme' ),
-			'active_callback' => '',
-			'control_class'   => 'WP_Customize_Control',
-		),
-		'logo_right',
-		array(
-			'section'         => 'title_tagline',
-			'settings'        => 'logo_right',
-			'priority'        => 9,
-			'type'            => 'text',
-			'label'           => __( 'Logo Margin Right', 'wireframe-theme' ),
-			'description'     => __( 'Descriptions goes here...', 'wireframe-theme' ),
-			'active_callback' => '',
-			'control_class'   => 'WP_Customize_Control',
-		),
-		'logo_bottom',
-		array(
-			'section'         => 'title_tagline',
-			'settings'        => 'logo_bottom',
-			'priority'        => 9,
-			'type'            => 'text',
-			'label'           => __( 'Logo Margin Bottom', 'wireframe-theme' ),
-			'description'     => __( 'Descriptions goes here...', 'wireframe-theme' ),
-			'active_callback' => '',
-			'control_class'   => 'WP_Customize_Control',
-		),
-		'navbar_title',
-		array(
-			'section'         => 'title_tagline',
-			'settings'        => 'navbar_title',
-			'priority'        => 10,
-			'type'            => 'checkbox',
-			'label'           => __( 'Display Site Title in Navbar?', 'wireframe-theme' ),
-			'description'     => __( 'Descriptions goes here...', 'wireframe-theme' ),
-			'active_callback' => '',
-			'control_class'   => null,
-		),
 		'link_color',
 		array(
 			'section'         => 'colors',
@@ -399,22 +288,6 @@ function wireframe_theme_config_customizer() {
 			'description'     => __( 'Descriptions goes here...', 'wireframe-theme' ),
 			'active_callback' => '',
 			'control_class'   => 'WP_Customize_Color_Control',
-		),
-		'navbar_contrast',
-		array(
-			'section'  => 'colors',
-			'settings' => 'navbar_contrast',
-			'priority' => 10,
-			'type'     => 'radio',
-			'choices'  => array(
-				'inverse'     => __( 'Dark', 'wireframe-theme' ),
-				'default'     => __( 'Light', 'wireframe-theme' ),
-				'transparent' => __( 'Transparent', 'wireframe-theme' ),
-			),
-			'label'           => __( 'Navbar Contrast', 'wireframe-theme' ),
-			'description'     => __( 'The navbar contrast to best match your design.', 'wireframe-theme' ),
-			'active_callback' => '',
-			'control_class'   => null,
 		),
 	);
 
@@ -485,6 +358,88 @@ function wireframe_theme_config_customizer() {
 	$enqueue = new Core_Enqueue( $prefix, $styles, $scripts );
 
 	/**
+	 * Inline styles to <head>.
+	 *
+	 * @since 1.0.0 Wireframe_Child
+	 * @var   array $inline Inline CSS.
+	 * @see   Theme_Customizer::css()
+	 */
+	$inline = array(
+		'body',
+		array(
+			'style'    => 'background-color',
+			'mod_name' => 'background_color',
+			'prefix'   => '#',
+			'postfix'  => '',
+			'echo'     => true,
+		),
+		'#site-title a',
+		array(
+			'style'    => 'color',
+			'mod_name' => 'header_textcolor',
+			'prefix'   => '#',
+			'postfix'  => '',
+			'echo'     => true,
+		),
+		'body',
+		array(
+			'style'    => 'background-color',
+			'mod_name' => 'background_color',
+			'prefix'   => '#',
+			'postfix'  => '',
+			'echo'     => true,
+		),
+		'a',
+		array(
+			'style'    => 'color',
+			'mod_name' => 'link_color',
+			'prefix'   => '',
+			'postfix'  => '',
+			'echo'     => true,
+		),
+		'body',
+		array(
+			'style'    => 'color',
+			'mod_name' => 'main_text_color',
+			'prefix'   => '',
+			'postfix'  => '',
+			'echo'     => true,
+		),
+		'#site-logo',
+		array(
+			'style'    => 'margin-top',
+			'mod_name' => 'margin_top',
+			'prefix'   => '',
+			'postfix'  => 'px',
+			'echo'     => true,
+		),
+		'#site-logo',
+		array(
+			'style'    => 'margin-right',
+			'mod_name' => 'margin_right',
+			'prefix'   => '',
+			'postfix'  => 'px',
+			'echo'     => true,
+		),
+		'#site-logo',
+		array(
+			'style'    => 'margin-bottom',
+			'mod_name' => 'margin_bottom',
+			'prefix'   => '',
+			'postfix'  => 'px',
+			'echo'     => true,
+		),
+		'#site-logo',
+		array(
+			'style'    => 'margin-left',
+			'mod_name' => 'margin_left',
+			'prefix'   => '',
+			'postfix'  => 'px',
+			'echo'     => true,
+		),
+	);
+
+	/**
 	 * Option #1: Return (array) of config data for passing into objects.
 	 *
 	 * Option #2: Cast array as an (object) and use object/property sytnax
@@ -512,6 +467,7 @@ function wireframe_theme_config_customizer() {
 		'panels'   => $panels,
 		'sections' => $sections,
 		'enqueue'  => $enqueue,
+		'inline'   => $inline,
 	);
 
 } // Thanks for using MixaTheme products!
