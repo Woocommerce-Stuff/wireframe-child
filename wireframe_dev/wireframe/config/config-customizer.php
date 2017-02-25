@@ -8,9 +8,9 @@
  * @author    MixaTheme, Tada Burke
  * @version   1.0.0 Wireframe_Child
  * @copyright 2016 MixaTheme
- * @license   GPL-2.0+
+ * @license   GPL-3.0+
  * @see       https://mixatheme.com
- * @see       https://github.com/mixatheme/Wireframe
+ * @see       https://github.com/mixatheme/wireframe-child
  *
  * This software is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of

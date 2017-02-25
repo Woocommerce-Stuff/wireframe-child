@@ -9,10 +9,10 @@
  * @package   Wireframe_Child
  * @author    MixaTheme, Tada Burke
  * @version   1.0.0 Wireframe_Child
- * @copyright 2016-2017 MixaTheme
+ * @copyright 2016 MixaTheme
  * @license   GPL-3.0+
  * @see       https://mixatheme.com
- * @see       https://github.com/mixatheme/Wireframe
+ * @see       https://github.com/mixatheme/wireframe-child
  * @see       https://codex.wordpress.org/Template_Hierarchy
  * @see       https://developer.wordpress.org/themes/basics/template-files
  *
