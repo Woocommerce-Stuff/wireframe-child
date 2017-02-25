@@ -4,7 +4,7 @@
 
 ***Clone it. Extend it. Sell it.***
 
-Wireframe Child is the default WordPress child theme for [Wireframe Theme](https://github.com/mixatheme/wireframe-theme). Wireframe Child is part of the [Wireframe](https://github.com/mixatheme/Wireframe) suite for WordPress by ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=16) [MixaTheme](https://github.com/mixatheme/wireframe-child#about-mixatheme).
+Wireframe Child is the default WordPress child theme for [Wireframe Theme](https://github.com/mixatheme/wireframe-theme). Wireframe Child is part of the [Wireframe](https://github.com/mixatheme/wireframe-child) suite for WordPress by ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=16) [MixaTheme](https://github.com/mixatheme/wireframe-child#about-mixatheme).
 
 ---
 
@@ -138,7 +138,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 *More free and commercial open-source software by MixaTheme...*
 
-### ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=20)&nbsp;[Wireframe](https://github.com/mixatheme/Wireframe)
+### ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=20)&nbsp;[Wireframe](https://github.com/mixatheme/wireframe-child)
 Wireframe is a suite of object-oriented components for creating modular WordPress themes & plugins. Creators extend Wireframe to deliver professional client projects or for selling premium marketplace products to the world.
 
 ### ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=20)&nbsp;[Mainframe](https://mixatheme.com)
