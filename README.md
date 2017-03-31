@@ -4,7 +4,7 @@
 
 ***Clone it. Extend it. Sell it.***
 
-Wireframe Child is the default WordPress child theme for [Wireframe Theme](https://github.com/mixatheme/wireframe-theme). Wireframe Child is part of the [Wireframe](https://github.com/mixatheme/wireframe-child) suite for WordPress by ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=16) [MixaTheme](https://github.com/mixatheme/wireframe-child#about-mixatheme).
+Wireframe Child is the default WordPress child theme for [Wireframe Theme](https://github.com/mixatheme/wireframe-theme). Wireframe Child is part of the [Wireframe Suite](https://github.com/mixatheme/Wireframe) for WordPress by ![MIXA Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=16) [MixaTheme](https://github.com/mixatheme/wireframe-child#about-mixatheme).
 
 ---
 
