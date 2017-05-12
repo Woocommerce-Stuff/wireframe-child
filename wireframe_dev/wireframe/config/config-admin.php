@@ -4,13 +4,13 @@
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Child
+ * @package   Wireframe_Theme
  * @author    MixaTheme, Tada Burke
  * @version   1.0.0 Wireframe_Child
  * @copyright 2016 MixaTheme
- * @license   GPL-3.0+
+ * @license   GPL-2.0+
  * @see       https://mixatheme.com
- * @see       https://github.com/mixatheme/wireframe-child
+ * @see       https://github.com/mixatheme/Wireframe
  *
  * This software is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -54,13 +54,17 @@ function wireframe_theme_config_admin() {
 	/**
 	 * Wired.
 	 *
-	 * Wires the Theme_Admin actions & filters at runtime. Since all themes
-	 * should have an admin/about page, this should always be set to true.
+	 * Wires the Module_Admin actions & filters at runtime. Since all plugins
+	 * & themes should have an admin/about page, this should always be set to true.
 	 *
-	 * Note: Most objects can be wired to hook actions & filters when an object
-	 * is instantiated. This is optional, because some objects do not need any
-	 * actions or filters.
+	 * Enable this configuration file:
 	 *
+	 * 		1. In this config file, set: $wired = true.
+	 * 		2. In this config file, modify any default data you need.
+	 * 		3. In `config-controller.php` instantiate Module_Admin.
+	 * 		4. In `config-controller.php` pass this config into Module_Admin.
+	 *
+	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe_Child
 	 * @var   bool $wired Wire hooks via __construct(). Default: true
 	 */
@@ -89,16 +93,36 @@ function wireframe_theme_config_admin() {
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
-		'theme_page' => array(
+		'styles' => array(
+			'tag'      => 'admin_enqueue_scripts',
+			'function' => 'styles',
+			'priority' => 10,
+			'args'     => null,
+		),
+		'scripts' => array(
+			'tag'      => 'admin_enqueue_scripts',
+			'function' => 'scripts',
+			'priority' => 10,
+			'args'     => null,
+		),
+		'menu_pages' => array(
 			'tag'      => 'admin_menu',
-			'function' => 'theme_page',
+			'function' => 'menu_pages',
+			'priority' => 10,
+			'args'     => 1,
+		),
+		'submenu_pages' => array(
+			'tag'      => 'admin_menu',
+			'function' => 'submenu_pages',
+			'priority' => 10,
+			'args'     => 1,
 		),
 	);
 
 	/**
 	 * Filters.
 	 *
-	 * Most objects don't generally need filters here, but you have the option.
+	 * Objects don't generally need filters here, but you have the option.
 	 * You can set your filters in a multi-dimensional array and remember
 	 * to set the property $wired = true (above).
 	 *
@@ -109,23 +133,95 @@ function wireframe_theme_config_admin() {
 	$filters = array();
 
 	/**
-	 * Theme page.
+	 * Stylesheet(s) to load.
 	 *
-	 * This should appear as a sub-menu in your Appearance menu. The callback
-	 * value should render your admin pages.
-	 *
+	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe_Child
-	 * @var   array $theme_page
+	 * @var   array $styles Array of stylesheets to enqueue.
 	 */
-	$theme_page = array(
+	$styles = array(
+		'admin_css' => array(
+			'path'    => WIREFRAME_THEME_CSS,
+			'file'    => 'wireframe-theme-admin-min',
+			'deps'    => array(),
+			'version' => WIREFRAME_THEME_VERSION,
+			'media'   => 'screen',
+
+		),
+	);
+
+	/**
+	 * Script(s) to load.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe_Child
+	 * @var   array $scripts Array of scripts to enqueue.
+	 */
+	$scripts = array(
+		'admin_js' => array(
+			'path'     => WIREFRAME_THEME_JS,
+			'file'     => 'wireframe-theme-admin-min',
+			'deps'     => array( 'jquery' ),
+			'footer'   => true,
+			'localize' => array(),
+		),
+	);
+
+	/**
+	 * Load media modal.
+	 *
+	 * Some plugins may need to tap into the Media Modal.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe_Child
+	 * @var   bool $media True loads wp_enqueue_media(). Default: false.
+	 * @todo  WIP. Should we contextually enqueue media modal?
+	 */
+	$mediamodal = false;
+
+	/**
+	 * This object depends on the Core_Enqueue object, so we need to intantiate
+	 * the Core_Enqueue object and pass-in parameters.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe_Child
+	 * @var   object Core_Enqueue(
+	 *        @param string     $prefix     Required prefix for handles.
+	 *        @param array|null $styles     Optional styles.
+	 *        @param array|null $scripts    Optional scripts.
+	 *        @param bool|null  $mediamodal Optional media modal.
+	 * )
+	 */
+	$enqueue = new Core_Enqueue( $prefix, $styles, $scripts, $mediamodal );
+
+	/**
+	 * Top-level Admin pages.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe_Child
+	 * @var   array $menu_pages
+	 */
+	$menu_pages = array(
 		'theme_page' => array(
 			'page_title' => 'Wireframe Theme',
 			'menu_title' => 'Wireframe Theme',
 			'capability' => 'manage_options',
 			'menu_slug'  => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
 			'callback'   => 'wireframe_theme_view_theme_page',
+			'icon_url'   => esc_url( '' ),
+			'position'   => 9999,
 		),
 	);
+
+	/**
+	 * Submenu Admin pages.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe_Child
+	 * @var   array $submenu_pages
+	 * @see   https://wordpress.stackexchange.com/questions/66498
+	 */
+	$submenu_pages = array();
 
 	/**
 	 * Option #1: Return (array) of config data for passing into objects.
@@ -143,10 +239,12 @@ function wireframe_theme_config_admin() {
 	 * @return array|object
 	 */
 	return array(
-		'wired'      => $wired,
-		'prefix'     => $prefix,
-		'actions'    => $actions,
-		'filters'    => $filters,
-		'theme_page' => $theme_page,
+		'wired'         => $wired,
+		'prefix'        => $prefix,
+		'actions'       => $actions,
+		'filters'       => $filters,
+		'enqueue'       => $enqueue,
+		'menu_pages'    => $menu_pages,
+		'submenu_pages' => $submenu_pages,
 	);
 }
