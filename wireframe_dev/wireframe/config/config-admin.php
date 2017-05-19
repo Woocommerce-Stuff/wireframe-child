@@ -228,7 +228,7 @@ function wireframe_theme_config_admin() {
 	 * 			'page_title' => WIREFRAME_THEME_PRODUCT,
 	 * 			'menu_title' => WIREFRAME_THEME_PRODUCT,
 	 * 			'capability' => 'manage_options',
-	 * 			'menu_slug'  => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+	 * 			'menu_slug'  => sanitize_title( 'wireframe-child' ),
 	 * 			'function'   => 'wireframe_theme_admin_page_callback_quickstart',
 	 * 		),
 	 * 	);
@@ -252,10 +252,10 @@ function wireframe_theme_config_admin() {
 	 */
 	$menu_pages = array(
 		'menu_pages' => array(
-			'page_title' => WIREFRAME_THEME_PRODUCT,
-			'menu_title' => WIREFRAME_THEME_PRODUCT,
+			'page_title' => 'Wireframe Child',
+			'menu_title' => 'Wireframe Child',
 			'capability' => 'manage_options',
-			'menu_slug'  => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'menu_slug'  => sanitize_title( 'wireframe-child' ),
 			'function'   => 'wireframe_theme_admin_page_callback_quickstart',
 			'icon_url'   => esc_url( '' ),
 			'position'   => 8888,
@@ -272,27 +272,27 @@ function wireframe_theme_config_admin() {
 	 */
 	$submenu_pages = array(
 		'quickstart' => array(
-			'parent_slug' => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'parent_slug' => sanitize_title( 'wireframe-child' ),
 			'page_title'  => 'Quickstart',
 			'menu_title'  => 'Quickstart',
 			'capability'  => 'manage_options',
-			'menu_slug'   => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'menu_slug'   => sanitize_title( 'wireframe-child' ),
 			'function'    => 'wireframe_theme_admin_page_callback_quickstart',
 		),
 		'faq' => array(
-			'parent_slug' => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'parent_slug' => sanitize_title( 'wireframe-child' ),
 			'page_title'  => 'FAQ',
 			'menu_title'  => 'FAQ',
 			'capability'  => 'manage_options',
-			'menu_slug'   => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN . '-faq' ),
+			'menu_slug'   => sanitize_title( 'wireframe-child-faq' ),
 			'function'    => 'wireframe_theme_admin_page_callback_faq',
 		),
 		'support' => array(
-			'parent_slug' => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'parent_slug' => sanitize_title( 'wireframe-child' ),
 			'page_title'  => 'Support',
 			'menu_title'  => 'Support',
 			'capability'  => 'manage_options',
-			'menu_slug'   => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN . '-support' ),
+			'menu_slug'   => sanitize_title( 'wireframe-child-support' ),
 			'function'    => 'wireframe_theme_admin_page_callback_support',
 		),
 	);
