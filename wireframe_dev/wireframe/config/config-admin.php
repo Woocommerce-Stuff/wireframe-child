@@ -1,12 +1,12 @@
 <?php
 /**
- * Theme_Admin config data file for Wireframe themes.
+ * Theme_Admin config data file for Wireframe Theme.
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Theme
+ * @package   Wireframe Theme
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Theme
  * @copyright 2016 MixaTheme
  * @license   GPL-2.0+
  * @see       https://mixatheme.com
@@ -25,14 +25,14 @@
  * Namespaces.
  *
  * @since 5.3.0 PHP
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe Theme
  */
 namespace MixaTheme\Wireframe\Theme;
 
 /**
  * No direct access to this file.
  *
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe Theme
  */
 defined( 'ABSPATH' ) or die();
 
@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) or die();
  *            Another alternative is putting all your object configs into one
  *            single config file to minimize your file count.
  *
- * @since  1.0.0 Wireframe_Child
+ * @since  1.0.0 Wireframe Theme
  * @see    object Theme_Admin
  * @return array  Default configuration values.
  */
@@ -65,7 +65,7 @@ function wireframe_theme_config_admin() {
 	 * 		4. In `config-controller.php` pass this config into Module_Admin.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   bool $wired Wire hooks via __construct(). Default: true
 	 */
 	$wired = true;
@@ -77,7 +77,7 @@ function wireframe_theme_config_admin() {
 	 * Generally, you should use a constant defined in wireframe.php. However,
 	 * you can change it here if needed. Default: WIREFRAME_THEME_PREFIX
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   string $prefix Prefix for handles.
 	 */
 	$prefix = WIREFRAME_THEME_PREFIX;
@@ -89,7 +89,31 @@ function wireframe_theme_config_admin() {
 	 * You can set your actions in a multi-dimensional array and remember
 	 * to set the property $wired = true (above).
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * Example theme page (in Appearance menu):
+	 *
+	 *		'theme_page' => array(
+	 *			'tag'      => 'admin_menu',
+	 *			'function' => 'theme_page',
+	 *			'priority' => 10,
+	 *			'args'     => 0,
+	 *		),
+	 *
+	 * Example menu pages (in Admin menu):
+	 *
+	 * 		'menu_pages' => array(
+	 * 			'tag'      => 'admin_menu',
+	 * 			'function' => 'menu_pages',
+	 * 			priority' => 10,
+	 * 			'args'     => 1,
+	 * 		),
+	 * 		'submenu_pages' => array(
+	 * 			'tag'      => 'admin_menu',
+	 * 			'function' => 'submenu_pages',
+	 * 			'priority' => 10,
+	 * 			'args'     => 1,
+	 * 		),
+	 *
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
@@ -109,13 +133,13 @@ function wireframe_theme_config_admin() {
 			'tag'      => 'admin_menu',
 			'function' => 'menu_pages',
 			'priority' => 10,
-			'args'     => 1,
+			'args'     => null,
 		),
 		'submenu_pages' => array(
 			'tag'      => 'admin_menu',
 			'function' => 'submenu_pages',
 			'priority' => 10,
-			'args'     => 1,
+			'args'     => null,
 		),
 	);
 
@@ -126,7 +150,7 @@ function wireframe_theme_config_admin() {
 	 * You can set your filters in a multi-dimensional array and remember
 	 * to set the property $wired = true (above).
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   array $filters Filters to hook.
 	 * @todo  WIP.
 	 */
@@ -136,7 +160,7 @@ function wireframe_theme_config_admin() {
 	 * Stylesheet(s) to load.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   array $styles Array of stylesheets to enqueue.
 	 */
 	$styles = array(
@@ -154,7 +178,7 @@ function wireframe_theme_config_admin() {
 	 * Script(s) to load.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   array $scripts Array of scripts to enqueue.
 	 */
 	$scripts = array(
@@ -173,7 +197,7 @@ function wireframe_theme_config_admin() {
 	 * Some plugins may need to tap into the Media Modal.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   bool $media True loads wp_enqueue_media(). Default: false.
 	 * @todo  WIP. Should we contextually enqueue media modal?
 	 */
@@ -184,7 +208,7 @@ function wireframe_theme_config_admin() {
 	 * the Core_Enqueue object and pass-in parameters.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   object Core_Enqueue(
 	 *        @param string     $prefix     Required prefix for handles.
 	 *        @param array|null $styles     Optional styles.
@@ -195,21 +219,46 @@ function wireframe_theme_config_admin() {
 	$enqueue = new Core_Enqueue( $prefix, $styles, $scripts, $mediamodal );
 
 	/**
-	 * Top-level Admin pages.
+	 * Theme page.
+	 *
+	 * Example:
+	 *
+	 * 		$theme_page = array(
+	 * 			'quickstart' => array(
+	 * 			'page_title' => WIREFRAME_THEME_PRODUCT,
+	 * 			'menu_title' => WIREFRAME_THEME_PRODUCT,
+	 * 			'capability' => 'manage_options',
+	 * 			'menu_slug'  => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+	 * 			'function'   => 'wireframe_theme_admin_page_callback_quickstart',
+	 * 		),
+	 * 	);
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
+	 * @var   array $menu_pages
+	 */
+	$theme_page = array();
+
+	/**
+	 * Top-level Admin pages.
+	 *
+	 * Note: Dependingn on the marketplace, they might have specific requirements
+	 * where you can add a theme page or upsell your products. If you're submitting
+	 * your theme to WordPress.org, you should probably use $theme_page (above).
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   array $menu_pages
 	 */
 	$menu_pages = array(
-		'theme_page' => array(
-			'page_title' => 'Wireframe Theme',
-			'menu_title' => 'Wireframe Theme',
+		'menu_pages' => array(
+			'page_title' => WIREFRAME_THEME_PRODUCT,
+			'menu_title' => WIREFRAME_THEME_PRODUCT,
 			'capability' => 'manage_options',
 			'menu_slug'  => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
-			'callback'   => 'wireframe_theme_view_theme_page',
+			'function'   => 'wireframe_theme_admin_page_callback_quickstart',
 			'icon_url'   => esc_url( '' ),
-			'position'   => 9999,
+			'position'   => 8888,
 		),
 	);
 
@@ -217,11 +266,36 @@ function wireframe_theme_config_admin() {
 	 * Submenu Admin pages.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
 	 * @var   array $submenu_pages
 	 * @see   https://wordpress.stackexchange.com/questions/66498
 	 */
-	$submenu_pages = array();
+	$submenu_pages = array(
+		'quickstart' => array(
+			'parent_slug' => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'page_title'  => 'Quickstart',
+			'menu_title'  => 'Quickstart',
+			'capability'  => 'manage_options',
+			'menu_slug'   => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'function'    => 'wireframe_theme_admin_page_callback_quickstart',
+		),
+		'faq' => array(
+			'parent_slug' => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'page_title'  => 'FAQ',
+			'menu_title'  => 'FAQ',
+			'capability'  => 'manage_options',
+			'menu_slug'   => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN . '-faq' ),
+			'function'    => 'wireframe_theme_admin_page_callback_faq',
+		),
+		'support' => array(
+			'parent_slug' => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN ),
+			'page_title'  => 'Support',
+			'menu_title'  => 'Support',
+			'capability'  => 'manage_options',
+			'menu_slug'   => sanitize_title( WIREFRAME_THEME_TEXTDOMAIN . '-support' ),
+			'function'    => 'wireframe_theme_admin_page_callback_support',
+		),
+	);
 
 	/**
 	 * Option #1: Return (array) of config data for passing into objects.
@@ -235,7 +309,7 @@ function wireframe_theme_config_admin() {
 	 * to use `apply_filters` or `wp_json_encode` or `add_setting` or `add_option`
 	 * whenever appropriate. Consider Admin pages for modifying settings & options.
 	 *
-	 * @since  1.0.0 Wireframe_Child
+	 * @since  1.0.0 Wireframe Theme
 	 * @return array|object
 	 */
 	return array(
@@ -244,6 +318,7 @@ function wireframe_theme_config_admin() {
 		'actions'       => $actions,
 		'filters'       => $filters,
 		'enqueue'       => $enqueue,
+		'theme_page'    => $theme_page,
 		'menu_pages'    => $menu_pages,
 		'submenu_pages' => $submenu_pages,
 	);
