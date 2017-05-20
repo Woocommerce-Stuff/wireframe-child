@@ -63,6 +63,21 @@ require_once get_stylesheet_directory() . '/wireframe_dev/wireframe/theme/walker
  * planning to use the parent theme as a framework for your child themes.
  * Otherwise, child themes should only need to extend the front-end.
  *
+ * How to access your service objects:
+ *
+ *      $wireframe_theme
+ *      $wireframe_theme->language()
+ *      $wireframe_theme->notices()
+ *      $wireframe_theme->ui()
+ *      $wireframe_theme->navigation()
+ *      $wireframe_theme->widgets()
+ *      $wireframe_theme->features()
+ *      $wireframe_theme->customizer()
+ *      $wireframe_theme->editor()
+ *      $wireframe_theme->admin()
+ *
+ * Note: Objects not available in `header.php` or `footer.php` template files.
+ *
  * @since 1.0.0 Wireframe_Child
  */
 require_once get_template_directory() . '/wireframe_dev/wireframe.php';
