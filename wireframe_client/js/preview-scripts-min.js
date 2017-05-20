@@ -4,9 +4,9 @@
  * Theme Customizer enhancements for a better user experience. Contains handlers
  * to make Theme Customizer preview reload changes asynchronously.
  *
- * @package   Wireframe_Child
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Child
  * @copyright 2012-2016 MixaTheme
  * @license   GPL-3.0+
  * @see       https://mixatheme.com

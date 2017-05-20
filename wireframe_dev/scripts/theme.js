@@ -2,15 +2,15 @@
 /* jshint devel:true */
 
 /**!
- * theme.js script file by MixaTheme.
+ * theme.js script file for themes built with Wireframe Suite for WordPress.
  *
  * These are theme-specific scripts to be used with Wireframe.
  *
  * jQuery 1.12.4
  *
- * @package   Wireframe_Child
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Child
  * @copyright 2016 MixaTheme
  * @license   GPL-3.0+
  * @see       https://mixatheme.com
@@ -30,7 +30,7 @@
  *
  * These scripts execute when the DOM is ready.
  *
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe Child
  * @see   http://stackoverflow.com/a/32621412
  */
 jQuery( function( $ ) {
@@ -39,7 +39,7 @@ jQuery( function( $ ) {
 	/**
 	 * BS3: Primary.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @type  object BS3_Primary
 	 * @see   jQuery addClass()
 	 * @see   http://v4-alpha.getbootstrap.com/components/buttons/
@@ -49,7 +49,7 @@ jQuery( function( $ ) {
 	/**
 	 * BS3: Secondary.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @type  object BS3_Secondary
 	 * @see   jQuery addClass()
 	 */
@@ -66,7 +66,7 @@ jQuery( function( $ ) {
 	/**
 	 * BS3: Images.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @type  object BS3_Images
 	 * @see   jQuery removeAttr()
 	 */
@@ -75,7 +75,7 @@ jQuery( function( $ ) {
 	/**
 	 * BS3: Forms.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @type  object BS3_Forms
 	 * @see   jQuery addClass()
 	 * @see   http://v4-alpha.getbootstrap.com/components/forms/
@@ -85,7 +85,7 @@ jQuery( function( $ ) {
 	/**
 	 * BS3: Tables.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @type  object BS3_Tables
 	 * @see   jQuery addClass()
 	 */
@@ -94,7 +94,7 @@ jQuery( function( $ ) {
 	/**
 	 * BS3: Comments.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @type  object BS3_Comments
 	 * @see   jQuery addClass()
 	 */
@@ -105,7 +105,7 @@ jQuery( function( $ ) {
 	 *
 	 * Pass properties via constructor function for abstracting dependency objects.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 * @param object primary
 	 * @param object secondary
 	 * @param object images
@@ -125,7 +125,7 @@ jQuery( function( $ ) {
 	/**
 	 * Container.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 */
 	function container( Wireframe_Theme ) {
 		//console.log( Wireframe_Theme );
@@ -136,7 +136,7 @@ jQuery( function( $ ) {
 	 *
 	 * Instantiates a new container with dependency objects.
 	 *
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
 	 */
 	container( new Wireframe_Theme(
 		new BS3_Primary(),

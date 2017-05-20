@@ -1,15 +1,17 @@
 <?php
 /**
- * Functions file for Wireframe Child.
+ * Child functions.php file for themes built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Child
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Child
  * @copyright 2016 MixaTheme
  * @license   GPL-3.0+
  * @see       https://mixatheme.com
+ * @see       https://github.com/mixatheme/Wireframe
+ * @see       https://github.com/mixatheme/wireframe-theme
  * @see       https://github.com/mixatheme/wireframe-child
  * @see       https://codex.wordpress.org/Functions_File_Explained
  *
@@ -41,7 +43,8 @@
  * lines below with the `Autoload Example` above, `cd` to the directory where the
  * `composer.json` file is located, then execute: composer dump-autoload -o
  *
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe
+ * @since 1.0.0 Wireframe Child
  * @since 1.1.2 Composer
  * @see   composer.json
  * @see   https://getcomposer.org
@@ -78,12 +81,10 @@ require_once get_stylesheet_directory() . '/wireframe_dev/wireframe/theme/walker
  *
  * Note: Objects not available in `header.php` or `footer.php` template files.
  *
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe
+ * @since 1.0.0 Wireframe Child
  */
 require_once get_template_directory() . '/wireframe_dev/wireframe.php';
-
-/** ADD YOUR CUSTOM FUNCTIONS BELOW THIS LINE... */
-/** ------------------------------------------------------------------------- */
 
 /**
  * Overload Parent: Search Form Button.
@@ -91,7 +92,8 @@ require_once get_template_directory() . '/wireframe_dev/wireframe.php';
  * Adds the ability to override the widget search form button.
  *
  * @since 2.7.0 WordPress
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe
+ * @since 1.0.0 Wireframe Child
  * @param string $text Replaces the form elements.
  * @see   https://developer.wordpress.org/reference/functions/get_search_form/
  * @todo  Glyphicon vs Font Awesome vs generic?
@@ -105,3 +107,6 @@ function wireframe_theme_search_form_button( $text ) {
 	return $text;
 }
 add_filter( 'get_search_form', 'wireframe_theme_search_form_button' );
+
+/** ADD YOUR CUSTOM FUNCTIONS BELOW THIS LINE... */
+/** ------------------------------------------------------------------------- */

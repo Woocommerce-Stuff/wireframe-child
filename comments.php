@@ -1,18 +1,20 @@
 <?php
 /**
- * Comments template file for Wireframe themes.
+ * Comments template file for themes built with Wireframe Suite for WordPress.
  *
  * The template for displaying the comments area of the page that contains
  * both the current comments and the comment form.
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Child
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Child
  * @copyright 2016 MixaTheme
  * @license   GPL-3.0+
  * @see       https://mixatheme.com
+ * @see       https://github.com/mixatheme/Wireframe
+ * @see       https://github.com/mixatheme/wireframe-theme
  * @see       https://github.com/mixatheme/wireframe-child
  * @see       https://codex.wordpress.org/Template_Hierarchy
  * @see       https://developer.wordpress.org/themes/basics/template-files

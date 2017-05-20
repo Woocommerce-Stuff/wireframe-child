@@ -1,16 +1,18 @@
 <?php
 /**
- * Core_Language config data file for Wireframe themes.
+ * Core_Language config for modules built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Child
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Child
  * @copyright 2016 MixaTheme
  * @license   GPL-2.0+
  * @see       https://mixatheme.com
  * @see       https://github.com/mixatheme/Wireframe
+ * @see       https://github.com/mixatheme/wireframe-theme
+ * @see       https://github.com/mixatheme/wireframe-child
  *
  * This software is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -25,7 +27,9 @@
  * Namespaces.
  *
  * @since 5.3.0 PHP
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe
+ * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  */
 namespace MixaTheme\Wireframe\Theme;
 
@@ -33,8 +37,8 @@ namespace MixaTheme\Wireframe\Theme;
  * No direct access to this file.
  *
  * @since 1.0.0 Wireframe
- * @since 1.0.0 Wireframe_Child
- * @since 1.0.0 Wireframe_Plugin
+ * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  */
 defined( 'ABSPATH' ) or die();
 
@@ -49,7 +53,8 @@ defined( 'ABSPATH' ) or die();
  *            single config file to minimize your file count.
  *
  * @since  1.0.0 Wireframe
- * @since  1.0.0 Wireframe_Child
+ * @since  1.0.0 Wireframe Theme
+ * @since  1.0.0 Wireframe Child
  * @see    object Core_Language
  * @return array  Default configuration values.
  */
@@ -60,8 +65,8 @@ function wireframe_theme_config_language() {
 	 * Is this module for a theme or a plugin?
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
-	 * @since 1.0.0 Wireframe_Plugin
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   string $module The module type. Default: plugin
 	 */
 	$module = 'theme';
@@ -77,8 +82,8 @@ function wireframe_theme_config_language() {
 	 * actions or filters.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
-	 * @since 1.0.0 Wireframe_Plugin
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   bool $wired Wire hooks via __construct(). Default: true
 	 */
 	$wired = true;
@@ -91,8 +96,8 @@ function wireframe_theme_config_language() {
 	 * you can change it here if needed. Default: WIREFRAME_THEME_TEXTDOMAIN
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
-	 * @since 1.0.0 Wireframe_Plugin
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   string $prefix Prefix for handles.
 	 */
 	$prefix = WIREFRAME_THEME_TEXTDOMAIN;
@@ -105,7 +110,8 @@ function wireframe_theme_config_language() {
 	 * to set the property $wired = true (above).
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
@@ -125,8 +131,8 @@ function wireframe_theme_config_language() {
 	 * to set the property $wired = true (above).
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
-	 * @since 1.0.0 Wireframe_Plugin
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   array $filters Filters to hook.
 	 * @todo  WIP.
 	 */
@@ -136,8 +142,8 @@ function wireframe_theme_config_language() {
 	 * Language: Use the $plugin_rel_path parameter instead?
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
-	 * @since 1.0.0 Wireframe_Plugin
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   bool $deprecated Language path. Default: false
 	 * @see   https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
 	 */
@@ -147,7 +153,8 @@ function wireframe_theme_config_language() {
 	 * Language: Path.
 	 *
 	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
 	 * @var   string $path Language path. Default: WIREFRAME_THEME_LANG
 	 */
 	$path = WIREFRAME_THEME_LANG;
@@ -165,7 +172,8 @@ function wireframe_theme_config_language() {
 	 * whenever appropriate. Consider Admin pages for modifying settings & options.
 	 *
 	 * @since  1.0.0 Wireframe
-	 * @since  1.0.0 Wireframe_Child
+	 * @since  1.0.0 Wireframe Theme
+	 * @since  1.0.0 Wireframe Child
 	 * @return array|object
 	 */
 	return array(

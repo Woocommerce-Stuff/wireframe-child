@@ -1,12 +1,12 @@
 <?php
 /**
- * Walker_BS3 is a theme class for Wireframe themes.
+ * Walker_BS3 module for themes built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe_Child
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
- * @version   1.0.0 Wireframe_Child
+ * @version   1.0.0 Wireframe Child
  * @copyright 2016 MixaTheme
  * @license   GPL-3.0+
  * @see       https://mixatheme.com
@@ -26,7 +26,7 @@
  * Namespace.
  *
  * @since 5.3.0 PHP
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe Child
  */
 namespace MixaTheme\Wireframe\Theme;
 use Walker_Nav_Menu;
@@ -34,14 +34,14 @@ use Walker_Nav_Menu;
 /**
  * No direct access to this file.
  *
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe Child
  */
 defined( 'ABSPATH' ) or die();
 
 /**
  * Check if the class exists.
  *
- * @since 1.0.0 Wireframe_Child
+ * @since 1.0.0 Wireframe Child
  */
 if ( ! class_exists( 'Walker_BS3' ) ) :
 	/**
@@ -49,8 +49,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 	 *
 	 * {@inheritDoc}
 	 *
-	 * @since 1.0.0 Wireframe_Child
-	 * @since 1.0.0 Wireframe_Child
+	 * @since 1.0.0 Wireframe Child
+	 * @since 1.0.0 Wireframe Child
 	 * @see   https://github.com/mixatheme/wireframe-child
 	 *
 	 * @internal WIP: We used the cool twittem walker forever, @todo roll our own.
@@ -62,8 +62,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 		 * @see Walker_BS3::start_lvl()
 		 *
 		 * @since 3.0.0 WordPress
-		 * @since 1.0.0 Wireframe_Child
-		 * @since 1.0.0 Wireframe_Child
+		 * @since 1.0.0 Wireframe Child
+		 * @since 1.0.0 Wireframe Child
 		 *
 		 * @param string $output Passed by reference. Used to append additional content.
 		 * @param int    $depth  Depth of menu item. Used for padding.
@@ -86,8 +86,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 		 *
 		 * @since 3.0.0 WordPress
 		 * @since 4.4.0 WordPress 'nav_menu_item_args' filter was added.
-		 * @since 1.0.0 Wireframe_Child
-		 * @since 1.0.0 Wireframe_Child
+		 * @since 1.0.0 Wireframe Child
+		 * @since 1.0.0 Wireframe Child
 		 *
 		 * @param string $output Passed by reference. Used to append additional content.
 		 * @param object $item    Menu item data object.
@@ -110,8 +110,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 * Filter the arguments for a single nav menu item.
 			 *
 			 * @since 4.4.0 WordPress
-			 * @since 1.0.0 Wireframe_Child
-			 * @since 1.0.0 Wireframe_Child
+			 * @since 1.0.0 Wireframe Child
+			 * @since 1.0.0 Wireframe Child
 			 *
 			 * @param array  $args   An array of arguments.
 			 * @param object $item   Menu item data object.
@@ -124,8 +124,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 *
 			 * @since 3.0.0 WordPress
 			 * @since 4.1.0 WordPress The `$depth` parameter was added.
-			 * @since 1.0.0 Wireframe_Child
-			 * @since 1.0.0 Wireframe_Child
+			 * @since 1.0.0 Wireframe Child
+			 * @since 1.0.0 Wireframe Child
 			 *
 			 * @param array  $Classes The CSS classes that are applied to the menu item's `<li>` element.
 			 * @param object $item    The current menu item.
@@ -142,8 +142,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 *
 			 * @since 3.0.1 WordPress
 			 * @since 4.1.0 WordPress The `$depth` parameter was added.
-			 * @since 1.0.0 Wireframe_Child
-			 * @since 1.0.0 Wireframe_Child
+			 * @since 1.0.0 Wireframe Child
+			 * @since 1.0.0 Wireframe Child
 			 *
 			 * @param string $menu_id The ID that is applied to the menu item's `<li>` element.
 			 * @param object $item    The current menu item.
@@ -166,8 +166,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 *
 			 * @since 3.6.0 WordPress
 			 * @since 4.1.0 WordPress The `$depth` parameter was added.
-			 * @since 1.0.0 Wireframe_Child
-			 * @since 1.0.0 Wireframe_Child
+			 * @since 1.0.0 Wireframe Child
+			 * @since 1.0.0 Wireframe Child
 			 *
 			 * @param array $atts {
 			 *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
@@ -210,8 +210,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 * Filter a menu item's title.
 			 *
 			 * @since 4.4.0 WordPress
-			 * @since 1.0.0 Wireframe_Child
-			 * @since 1.0.0 Wireframe_Child
+			 * @since 1.0.0 Wireframe Child
+			 * @since 1.0.0 Wireframe Child
 			 *
 			 * @param string $title The menu item's title.
 			 * @param object $item  The current menu item.
@@ -240,8 +240,8 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 * no filter for modifying the opening and closing `<li>` for a menu item.
 			 *
 			 * @since 3.0.0 WordPress
-			 * @since 1.0.0 Wireframe_Child
-			 * @since 1.0.0 Wireframe_Child
+			 * @since 1.0.0 Wireframe Child
+			 * @since 1.0.0 Wireframe Child
 			 *
 			 * @param string  $item_output The menu item's starting HTML output.
 			 * @param object  $item        Menu item data object.

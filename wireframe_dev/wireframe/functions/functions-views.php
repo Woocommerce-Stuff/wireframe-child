@@ -1,10 +1,10 @@
 <?php
 /**
- * Views callback functions for Wireframe Theme.
+ * Views callback functions for themes built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
- * @package   Wireframe Theme
+ * @package   Wireframe Child
  * @author    MixaTheme, Tada Burke
  * @version   1.0.0 Wireframe Theme
  * @copyright 2016 MixaTheme
@@ -41,6 +41,7 @@
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   functions.php The text-domain to use.
  */
 function wireframe_theme_admin_page_tabs_quickstart() {
@@ -73,6 +74,7 @@ function wireframe_theme_admin_page_tabs_quickstart() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   wireframe.php The text-domain to use.
  */
 function wireframe_theme_admin_page_tabs_faq() {
@@ -105,6 +107,7 @@ function wireframe_theme_admin_page_tabs_faq() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   functions-helpers.php
  * @see   wireframe.php The text-domain to use.
  */
@@ -133,6 +136,7 @@ function wireframe_theme_admin_page_tabs_support() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   functions-helpers.php Admin check function.
  * @see   wp-admin/images/wordpress-logo-white.svg
  * @see   wireframe-theme/wireframe_client/img/wireframe-theme-badge-white.svg
@@ -156,6 +160,7 @@ function wireframe_theme_admin_page_badge() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   functions-helpers.php Admin check function.
  */
 function wireframe_theme_admin_page_header() {
@@ -182,6 +187,7 @@ function wireframe_theme_admin_page_header() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   config-admin.php      Hooks into this callback function.
  * @see   functions-helpers.php Admin check function.
  */
@@ -210,6 +216,7 @@ function wireframe_theme_admin_page_callback_quickstart() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   config-admin.php      Hooks into this callback function.
  * @see   functions-helpers.php Admin check function.
  */
@@ -238,6 +245,7 @@ function wireframe_theme_admin_page_callback_faq() {
  *
  * @since 1.0.0 Wireframe
  * @since 1.0.0 Wireframe Theme
+ * @since 1.0.0 Wireframe Child
  * @see   config-admin.php      Hooks into this callback function.
  * @see   functions-helpers.php Admin check function.
  */
