@@ -53,7 +53,8 @@
  * @internal CLI: composer dump-autoload -o
  * @internal WPCS expects a lowercase filename (PSR-2, PSR-4 invalid).
  */
-require_once get_stylesheet_directory() . '/wireframe_dev/wireframe/theme/walker/walker-bs3.php';
+require_once get_stylesheet_directory() . '/wireframe_dev/wireframe/module/walker/module-walker-bs3-interface.php';
+require_once get_stylesheet_directory() . '/wireframe_dev/wireframe/module/walker/module-walker-bs3.php';
 
 /**
  * Wireframe API.

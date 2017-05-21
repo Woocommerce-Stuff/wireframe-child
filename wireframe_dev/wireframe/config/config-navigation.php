@@ -136,22 +136,22 @@ function wireframe_theme_config_navigation() {
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   object Walker_BS3
+	 * @var   object Module_Walker_BS3
 	 */
-	$walker = new Walker_BS3;
+	$walker = new Module_Walker_BS3;
 
 	/**
 	 * Nav menu arguments.
 	 *
 	 * Note: The `walker` value must be an instance of a walker menu class.
-	 * You can DI your own walker, or extend the default `Walker_BS3` class
+	 * You can DI your own walker, or extend the default `Module_Walker_BS3` class
 	 * built into Wireframe Child. Don't forget to declare a namespace alias
 	 * for any custom walkers you create!
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @see   object Walker_BS3
+	 * @see   object Module_Walker_BS3
 	 * @var   array  $args Args for the primary menu.
 	 */
 	$args = array(

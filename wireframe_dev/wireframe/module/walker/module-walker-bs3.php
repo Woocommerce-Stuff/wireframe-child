@@ -1,6 +1,6 @@
 <?php
 /**
- * Walker_BS3 module for themes built with Wireframe Suite for WordPress.
+ * Module_Walker_BS3 is a Wireframe module interface.
  *
  * PHP version 5.6.0
  *
@@ -43,28 +43,24 @@ defined( 'ABSPATH' ) or die();
  *
  * @since 1.0.0 Wireframe Child
  */
-if ( ! class_exists( 'Walker_BS3' ) ) :
+if ( ! class_exists( 'Module_Walker_BS3' ) ) :
 	/**
-	 * Walker_BS3 is a theme class for extending Walker_Nav_Menu.
+	 * Module_Walker_BS3 is a theme class for extending Walker_Nav_Menu.
 	 *
 	 * {@inheritDoc}
 	 *
 	 * @since 1.0.0 Wireframe Child
-	 * @since 1.0.0 Wireframe Child
 	 * @see   https://github.com/mixatheme/wireframe-child
+	 * @see   http://wordpress.stackexchange.com/questions/197060
 	 *
 	 * @internal WIP: We used the cool twittem walker forever, @todo roll our own.
 	 */
-	final class Walker_BS3 extends Walker_Nav_Menu {
+	final class Module_Walker_BS3 extends Walker_Nav_Menu implements Module_Walker_BS3_Interface {
 		/**
 		 * Starts the UL before the elements are added.
 		 *
-		 * @see Walker_BS3::start_lvl()
-		 *
 		 * @since 3.0.0 WordPress
 		 * @since 1.0.0 Wireframe Child
-		 * @since 1.0.0 Wireframe Child
-		 *
 		 * @param string $output Passed by reference. Used to append additional content.
 		 * @param int    $depth  Depth of menu item. Used for padding.
 		 * @param array  $args   An array of arguments. @see wp_nav_menu().
@@ -81,14 +77,9 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 		/**
 		 * Start the element output.
 		 *
-		 * @see Walker::start_el()
-		 * @see http://wordpress.stackexchange.com/questions/197060
-		 *
 		 * @since 3.0.0 WordPress
 		 * @since 4.4.0 WordPress 'nav_menu_item_args' filter was added.
 		 * @since 1.0.0 Wireframe Child
-		 * @since 1.0.0 Wireframe Child
-		 *
 		 * @param string $output Passed by reference. Used to append additional content.
 		 * @param object $item    Menu item data object.
 		 * @param int    $depth   Depth of menu item. Used for padding.
@@ -111,8 +102,6 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 *
 			 * @since 4.4.0 WordPress
 			 * @since 1.0.0 Wireframe Child
-			 * @since 1.0.0 Wireframe Child
-			 *
 			 * @param array  $args   An array of arguments.
 			 * @param object $item   Menu item data object.
 			 * @param int    $depth  Depth of menu item. Used for padding.
@@ -125,8 +114,6 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 * @since 3.0.0 WordPress
 			 * @since 4.1.0 WordPress The `$depth` parameter was added.
 			 * @since 1.0.0 Wireframe Child
-			 * @since 1.0.0 Wireframe Child
-			 *
 			 * @param array  $Classes The CSS classes that are applied to the menu item's `<li>` element.
 			 * @param object $item    The current menu item.
 			 * @param array  $args    An array of {@see wp_nav_menu()} arguments.
@@ -143,8 +130,6 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 * @since 3.0.1 WordPress
 			 * @since 4.1.0 WordPress The `$depth` parameter was added.
 			 * @since 1.0.0 Wireframe Child
-			 * @since 1.0.0 Wireframe Child
-			 *
 			 * @param string $menu_id The ID that is applied to the menu item's `<li>` element.
 			 * @param object $item    The current menu item.
 			 * @param array  $args    An array of {@see wp_nav_menu()} arguments.
@@ -167,8 +152,6 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 * @since 3.6.0 WordPress
 			 * @since 4.1.0 WordPress The `$depth` parameter was added.
 			 * @since 1.0.0 Wireframe Child
-			 * @since 1.0.0 Wireframe Child
-			 *
 			 * @param array $atts {
 			 *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
 			 *
@@ -211,15 +194,12 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 *
 			 * @since 4.4.0 WordPress
 			 * @since 1.0.0 Wireframe Child
-			 * @since 1.0.0 Wireframe Child
-			 *
 			 * @param string $title The menu item's title.
 			 * @param object $item  The current menu item.
 			 * @param array  $args  An array of {@see wp_nav_menu()} arguments.
 			 * @param int    $depth Depth of menu item. Used for padding.
-			 *
-			 * @todo We need a conditional "active" class.
-			 * @todo We need a better conditional for handline $apparent "caret" class.
+			 * @todo  We need a conditional "active" class.
+			 * @todo  We need a better conditional for handline $apparent "caret" class.
 			 */
 			$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
@@ -241,8 +221,6 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			 *
 			 * @since 3.0.0 WordPress
 			 * @since 1.0.0 Wireframe Child
-			 * @since 1.0.0 Wireframe Child
-			 *
 			 * @param string  $item_output The menu item's starting HTML output.
 			 * @param object  $item        Menu item data object.
 			 * @param int     $depth       Depth of menu item. Used for padding.
@@ -251,6 +229,6 @@ if ( ! class_exists( 'Walker_BS3' ) ) :
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}
 
-	} // Walker_BS3.
+	} // Module_Walker_BS3.
 
 endif; // Thanks for using MixaTheme products!

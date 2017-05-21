@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname(dirname($vendorDir));
 
 return array(
-    'MixaTheme\\Wireframe\\Theme\\Walker_BS3' => $baseDir . '/wireframe_dev/wireframe/theme/walker/walker-bs3.php',
+    'MixaTheme\\Wireframe\\Theme\\Module_Walker_BS3' => $baseDir . '/wireframe_dev/wireframe/module/walker/module-walker-bs3.php',
+    'MixaTheme\\Wireframe\\Theme\\Module_Walker_BS3_Interface' => $baseDir . '/wireframe_dev/wireframe/module/walker/module-walker-bs3-interface.php',
 );

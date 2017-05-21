@@ -17,7 +17,8 @@ class ComposerStaticInit51b44e4d478580fc964957a755ca4e81
     );
 
     public static $classMap = array (
-        'MixaTheme\\Wireframe\\Theme\\Walker_BS3' => __DIR__ . '/../../..' . '/wireframe_dev/wireframe/theme/walker/walker-bs3.php',
+        'MixaTheme\\Wireframe\\Theme\\Module_Walker_BS3' => __DIR__ . '/../../..' . '/wireframe_dev/wireframe/module/walker/module-walker-bs3.php',
+        'MixaTheme\\Wireframe\\Theme\\Module_Walker_BS3_Interface' => __DIR__ . '/../../..' . '/wireframe_dev/wireframe/module/walker/module-walker-bs3-interface.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
