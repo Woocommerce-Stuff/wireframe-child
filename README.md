@@ -22,7 +22,7 @@ Wireframe Child is the default OOP WordPress child theme boilerplate for [Wirefr
 * **Maintained by:** ![MixaTheme Logo](https://avatars3.githubusercontent.com/u/16634291?v=3&s=16) [MixaTheme](https://github.com/mixatheme/wireframe-child#about-mixatheme)
 * **Phase:** Beta-1
 * **Version:** 1.0.0
-* **Tested:** WordPress 4.7.5, PHP 5.6-7.1
+* **Tested:** WordPress 4.7.5, PHP 5.6-7.1, all modern browsers.
 
 [Top](https://github.com/mixatheme/wireframe-child#wireframe-child)
 
