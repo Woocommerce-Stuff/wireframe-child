@@ -81,39 +81,39 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: wireframe_client/template-parts/content-none.php:32
+#: wireframe_usr/template-parts/content-none.php:32
 msgid "Nothing Found"
 msgstr ""
 
-#: wireframe_client/template-parts/content-none.php:38
+#: wireframe_usr/template-parts/content-none.php:38
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: wireframe_client/template-parts/content-none.php:42
+#: wireframe_usr/template-parts/content-none.php:42
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: wireframe_client/template-parts/content-none.php:52
+#: wireframe_usr/template-parts/content-none.php:52
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: wireframe_client/template-parts/content-page.php:47
-#: wireframe_client/template-parts/content.php:62
+#: wireframe_usr/template-parts/content-page.php:47
+#: wireframe_usr/template-parts/content.php:62
 msgid "Pages:"
 msgstr ""
 
-#: wireframe_client/template-parts/content-page.php:60
+#: wireframe_usr/template-parts/content-page.php:60
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: wireframe_client/template-parts/content.php:57
+#: wireframe_usr/template-parts/content.php:57
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""

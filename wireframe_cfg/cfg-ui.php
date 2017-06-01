@@ -154,13 +154,13 @@ function wireframe_theme_cfg_ui() {
 	 */
 	$styles = array(
 		'fontawesome' => array(
-			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
+			'path'  => get_stylesheet_directory_uri() . '/wireframe_usr/css/',
 			'file'  => 'font-awesome-min',
 			'deps'  => array(),
 			'media' => 'all',
 		),
 		'framework' => array(
-			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
+			'path'  => get_stylesheet_directory_uri() . '/wireframe_usr/css/',
 			'file'  => 'framework-min',
 			'deps'  => array(),
 			'media' => 'screen',
@@ -189,25 +189,25 @@ function wireframe_theme_cfg_ui() {
 	 */
 	$scripts = array(
 		'modernizr' => array(
-			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'path'   => get_stylesheet_directory_uri() . '/wireframe_usr/js/',
 			'file'   => 'modernizr-min',
 			'deps'   => array( 'jquery' ),
 			'footer' => false,
 		),
 		'respond' => array(
-			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'path'   => get_stylesheet_directory_uri() . '/wireframe_usr/js/',
 			'file'   => 'respond-min',
 			'deps'   => array( 'jquery' ),
 			'footer' => false,
 		),
 		'framework' => array(
-			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'path'   => get_stylesheet_directory_uri() . '/wireframe_usr/js/',
 			'file'   => 'framework-min',
 			'deps'   => array( 'jquery' ),
 			'footer' => true,
 		),
 		'theme' => array(
-			'path'     => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'path'     => get_stylesheet_directory_uri() . '/wireframe_usr/js/',
 			'file'     => 'theme-min',
 			'deps'     => array( 'jquery' ),
 			'footer'   => true,
