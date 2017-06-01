@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme_Editor config for modules built with Wireframe Suite for WordPress.
+ * Theme_Navigation config for modules built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
@@ -55,16 +55,15 @@ defined( 'ABSPATH' ) or die();
  * @since  1.0.0 Wireframe
  * @since  1.0.0 Wireframe Theme
  * @since  1.0.0 Wireframe Child
- * @see    object Theme_Editor
+ * @see    object Theme_Navigation
  * @return array  Default configuration values.
  */
-function wireframe_theme_config_editor() {
+function wireframe_theme_cfg_navigation() {
 	/**
 	 * Wired.
 	 *
-	 * Wires the Theme_Editor actions & filters at runtime. Most themes will probably
-	 * not modify the TinyMCE Editor, but more advanced themes will need to.
-	 * We set the default value to true for educational purposes.
+	 * Wires the Theme_Navigation actions & filters at runtime. Since all themes
+	 * need navigation, this should always be set to true.
 	 *
 	 * Note: Most objects can be wired to hook actions & filters when an object
 	 * is instantiated. This is optional, because some objects do not need any
@@ -104,23 +103,11 @@ function wireframe_theme_config_editor() {
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
-		'editor_style' => array(
-			'tag'      => 'after_setup_theme',
-			'function' => 'editor_style',
+		'primary_menu' => array(
+			'tag'      => 'wireframe_theme_mainmenu',
+			'function' => 'primary_menu',
 			'priority' => 10,
 			'args'     => null,
-		),
-		'buttons_2' => array(
-			'tag'      => 'mce_buttons_2',
-			'function' => 'buttons_2',
-			'priority' => 10,
-			'args'     => 1,
-		),
-		'style_formats' => array(
-			'tag'      => 'tiny_mce_before_init',
-			'function' => 'style_formats',
-			'priority' => 10,
-			'args'     => 1,
 		),
 	);
 
@@ -140,48 +127,54 @@ function wireframe_theme_config_editor() {
 	$filters = array();
 
 	/**
-	 * Path to the `TinyMCE` editor custom stylesheet.
+	 * Walker.
+	 *
+	 * You can instantiate a new custom walker menu class here. Since we use
+	 * Bootstrap 3 for the official Wireframe Child theme, we started you off
+	 * with a very basic Bootstrap 3 walker class.
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   string $editor_style Path to the stylesheet.
+	 * @var   object Module_Walker_BS3
 	 */
-	$editor_style = WIREFRAME_THEME_CSS . 'editor-style-min';
+	$walker = new Module_Walker_BS3;
 
 	/**
-	 * Add `Style Formats` arrays to the `TinyMCE` editor.
+	 * Nav menu arguments.
 	 *
-	 * You must also set the CSS in the `editor-style.scss` stylesheet.
-	 * End-Users: The `TinyMCE` editor's `Toolbar Toggle` button must be
-	 * clicked to reveal the `Formats` select dropdown menu.
+	 * Note: The `walker` value must be an instance of a walker menu class.
+	 * You can DI your own walker, or extend the default `Module_Walker_BS3` class
+	 * built into Wireframe Child. Don't forget to declare a namespace alias
+	 * for any custom walkers you create!
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   array $style_formats Array of style formats.
-	 * @see   https://codex.wordpress.org/TinyMCE_Custom_Styles
+	 * @see   object Module_Walker_BS3
+	 * @var   array  $args Args for the primary menu.
 	 */
-	$style_formats = array(
-		array(
-			'title'    => __( 'Bootstrap Lead', 'wireframe-theme' ),
-			'selector' => 'p',
-			'block'    => 'div',
-			'classes'  => 'lead',
-			'wrapper'  => true,
+	$args = array(
+		'primary_menu' => array(
+			'menu'            => '',
+			'menu_class'      => 'menu nav-menu nav navbar-nav navbar-right',
+			'menu_id'         => 'primary-menu',
+			'container'       => 'div',
+			'container_class' => 'menu-all-pages-container container-fluid',
+			'container_id'    => '',
+			'fallback_cb'     => '',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'echo'            => true,
+			'depth'           => 0,
+			'walker'          => $walker,
+			'theme_location'  => 'primary',
+			'items_wrap'      => '<div class="navbar-collapse collapse"><ul id="%1$s" class="%2$s">%3$s</ul></div>',
 		),
-		array(
-			'title'  => __( 'Bootstrap Marked', 'wireframe-theme' ),
-			'inline' => 'mark',
-		),
-		array(
-			'title'  => __( 'Bootstrap Code', 'wireframe-theme' ),
-			'inline' => 'code',
-		),
-		array(
-			'title'  => __( 'Bootstrap KBD', 'wireframe-theme' ),
-			'inline' => 'kbd',
-		),
+		'secondary_menu' => array(),
+		'tertiary_menu'  => array(),
 	);
 
 	/**
@@ -202,12 +195,13 @@ function wireframe_theme_config_editor() {
 	 * @return array|object
 	 */
 	return array(
-		'wired'         => $wired,
-		'prefix'        => $prefix,
-		'actions'       => $actions,
-		'filters'       => $filters,
-		'editor_style'  => $editor_style,
-		'style_formats' => $style_formats,
+		'wired'          => $wired,
+		'prefix'         => $prefix,
+		'actions'        => $actions,
+		'filters'        => $filters,
+		'primary_menu'   => $args['primary_menu'],
+		'secondary_menu' => $args['secondary_menu'],
+		'tertiary_menu'  => $args['tertiary_menu'],
 	);
 
 } // Thanks for using MixaTheme products!

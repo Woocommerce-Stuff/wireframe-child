@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme_Widgets config for modules built with Wireframe Suite for WordPress.
+ * Core_Language config for modules built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
@@ -8,7 +8,7 @@
  * @author    MixaTheme, Tada Burke
  * @version   1.0.0 Wireframe Child
  * @copyright 2016 MixaTheme
- * @license   GPL-3.0+
+ * @license   GPL-2.0+
  * @see       https://mixatheme.com
  * @see       https://github.com/mixatheme/Wireframe
  * @see       https://github.com/mixatheme/wireframe-theme
@@ -55,15 +55,27 @@ defined( 'ABSPATH' ) or die();
  * @since  1.0.0 Wireframe
  * @since  1.0.0 Wireframe Theme
  * @since  1.0.0 Wireframe Child
- * @see    object Theme_Widgets
+ * @see    object Core_Language
  * @return array  Default configuration values.
  */
-function wireframe_theme_config_widgets() {
+function wireframe_theme_cfg_language() {
+	/**
+	 * Module.
+	 *
+	 * Is this module for a theme or a plugin?
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
+	 * @var   string $module The module type. Default: plugin
+	 */
+	$module = 'theme';
+
 	/**
 	 * Wired.
 	 *
-	 * Wires the Theme_Wdigets actions & filters at runtime. Since all themes
-	 * should have widgets registered, this should always be set to true.
+	 * Wires the Core_Language actions & filters at runtime. Since all themes
+	 * should have use translation, this should always be set to true.
 	 *
 	 * Note: Most objects can be wired to hook actions & filters when an object
 	 * is instantiated. This is optional, because some objects do not need any
@@ -81,14 +93,14 @@ function wireframe_theme_config_widgets() {
 	 *
 	 * Many objects use a prefix for various strings, handles, scripts, etc.
 	 * Generally, you should use a constant defined in wireframe.php. However,
-	 * you can change it here if needed. Default: WIREFRAME_THEME_PREFIX
+	 * you can change it here if needed. Default: WIREFRAME_THEME_TEXTDOMAIN
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
 	 * @var   string $prefix Prefix for handles.
 	 */
-	$prefix = WIREFRAME_THEME_PREFIX;
+	$prefix = WIREFRAME_THEME_TEXTDOMAIN;
 
 	/**
 	 * Actions.
@@ -103,18 +115,18 @@ function wireframe_theme_config_widgets() {
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
-		'register' => array(
-			'tag'      => 'widgets_init',
-			'function' => 'register',
+		'after_setup_theme' => array(
+			'tag'      => 'after_setup_theme',
+			'function' => 'textdomain',
 			'priority' => 10,
-			'args'     => 1,
+			'args'     => null,
 		),
 	);
 
 	/**
 	 * Filters.
 	 *
-	 * Most objects don't generally need filters here, but you have the option.
+	 * Objects don't generally need filters here, but you have the option.
 	 * You can set your filters in a multi-dimensional array and remember
 	 * to set the property $wired = true (above).
 	 *
@@ -127,53 +139,25 @@ function wireframe_theme_config_widgets() {
 	$filters = array();
 
 	/**
-	 * Widgets: Register Widgets.
+	 * Language: Use the $plugin_rel_path parameter instead?
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   array $registered Array of registered widgets.
+	 * @var   bool $deprecated Language path. Default: false
+	 * @see   https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
 	 */
-	$registered = array(
-		'primary' => array(
-			'name'          => __( 'Primary', 'wireframe-theme' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add important widgets here.', 'wireframe-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		),
-		'secondary' => array(
-			'name'          => __( 'Secondary', 'wireframe-theme' ),
-			'id'            => 'sidebar-2',
-			'description'   => __( 'Add secondary widgets here.', 'wireframe-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		),
-		'tertiary' => array(
-			'name'          => __( 'Tertiary', 'wireframe-theme' ),
-			'id'            => 'sidebar-3',
-			'description'   => __( 'Add tertiary widgets here.', 'wireframe-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		),
-	);
+	$deprecated = false;
 
 	/**
-	 * Widgets: Unregister Widgets.
+	 * Language: Path.
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   array $unregistered Array of widgets to unregister.
-	 * @todo  Bake this in or disallow?
+	 * @var   string $path Language path. Default: WIREFRAME_THEME_LANG
 	 */
-	$unregistered = array();
+	$path = WIREFRAME_THEME_LANG;
 
 	/**
 	 * Option #1: Return (array) of config data for passing into objects.
@@ -193,12 +177,13 @@ function wireframe_theme_config_widgets() {
 	 * @return array|object
 	 */
 	return array(
-		'wired'        => $wired,
-		'prefix'       => $prefix,
-		'actions'      => $actions,
-		'filters'      => $filters,
-		'registered'   => $registered,
-		'unregistered' => $unregistered,
+		'module'     => $module,
+		'wired'      => $wired,
+		'prefix'     => $prefix,
+		'actions'    => $actions,
+		'filters'    => $filters,
+		'deprecated' => $deprecated,
+		'path'       => $path,
 	);
 
 } // Thanks for using MixaTheme products!

@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme_Navigation config for modules built with Wireframe Suite for WordPress.
+ * Theme_UI config for modules built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
@@ -55,15 +55,15 @@ defined( 'ABSPATH' ) or die();
  * @since  1.0.0 Wireframe
  * @since  1.0.0 Wireframe Theme
  * @since  1.0.0 Wireframe Child
- * @see    object Theme_Navigation
+ * @see    object Theme_UI
  * @return array  Default configuration values.
  */
-function wireframe_theme_config_navigation() {
+function wireframe_theme_cfg_ui() {
 	/**
 	 * Wired.
 	 *
-	 * Wires the Theme_Navigation actions & filters at runtime. Since all themes
-	 * need navigation, this should always be set to true.
+	 * Wires the Theme_UI actions & filters at runtime. Since most themes
+	 * should have UI styles & scripts, this should usually be set to true.
 	 *
 	 * Note: Most objects can be wired to hook actions & filters when an object
 	 * is instantiated. This is optional, because some objects do not need any
@@ -103,9 +103,27 @@ function wireframe_theme_config_navigation() {
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
-		'primary_menu' => array(
-			'tag'      => 'wireframe_theme_mainmenu',
-			'function' => 'primary_menu',
+		'styles' => array(
+			'tag'      => 'wp_enqueue_scripts',
+			'function' => 'styles',
+			'priority' => 10,
+			'args'     => null,
+		),
+		'scripts' => array(
+			'tag'      => 'wp_enqueue_scripts',
+			'function' => 'scripts',
+			'priority' => 10,
+			'args'     => null,
+		),
+		'stylecss' => array(
+			'tag'      => 'wp_enqueue_scripts',
+			'function' => 'stylecss',
+			'priority' => 10,
+			'args'     => null,
+		),
+		'comments' => array(
+			'tag'      => 'wp_enqueue_scripts',
+			'function' => 'commentjs',
 			'priority' => 10,
 			'args'     => null,
 		),
@@ -127,55 +145,128 @@ function wireframe_theme_config_navigation() {
 	$filters = array();
 
 	/**
-	 * Walker.
-	 *
-	 * You can instantiate a new custom walker menu class here. Since we use
-	 * Bootstrap 3 for the official Wireframe Child theme, we started you off
-	 * with a very basic Bootstrap 3 walker class.
+	 * Stylesheets to load.
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   object Module_Walker_BS3
+	 * @var   array $styles Array of stylesheets to enqueue.
 	 */
-	$walker = new Module_Walker_BS3;
+	$styles = array(
+		'fontawesome' => array(
+			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
+			'file'  => 'font-awesome-min',
+			'deps'  => array(),
+			'media' => 'all',
+		),
+		'framework' => array(
+			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
+			'file'  => 'framework-min',
+			'deps'  => array(),
+			'media' => 'screen',
+		),
+		'parent' => array(
+			'path'  => get_template_directory_uri(),
+			'file'  => 'style',
+			'deps'  => array(),
+			'media' => 'screen',
+		),
+		'theme' => array(
+			'path'  => get_stylesheet_directory_uri(),
+			'file'  => 'style',
+			'deps'  => array(),
+			'media' => 'screen',
+		),
+	);
 
 	/**
-	 * Nav menu arguments.
-	 *
-	 * Note: The `walker` value must be an instance of a walker menu class.
-	 * You can DI your own walker, or extend the default `Module_Walker_BS3` class
-	 * built into Wireframe Child. Don't forget to declare a namespace alias
-	 * for any custom walkers you create!
+	 * Scripts to load.
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @see   object Module_Walker_BS3
-	 * @var   array  $args Args for the primary menu.
+	 * @var   array $scripts Array of scripts to enqueue.
 	 */
-	$args = array(
-		'primary_menu' => array(
-			'menu'            => '',
-			'menu_class'      => 'menu nav-menu nav navbar-nav navbar-right',
-			'menu_id'         => 'primary-menu',
-			'container'       => 'div',
-			'container_class' => 'menu-all-pages-container container-fluid',
-			'container_id'    => '',
-			'fallback_cb'     => '',
-			'before'          => '',
-			'after'           => '',
-			'link_before'     => '',
-			'link_after'      => '',
-			'echo'            => true,
-			'depth'           => 0,
-			'walker'          => $walker,
-			'theme_location'  => 'primary',
-			'items_wrap'      => '<div class="navbar-collapse collapse"><ul id="%1$s" class="%2$s">%3$s</ul></div>',
+	$scripts = array(
+		'modernizr' => array(
+			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'file'   => 'modernizr-min',
+			'deps'   => array( 'jquery' ),
+			'footer' => false,
 		),
-		'secondary_menu' => array(),
-		'tertiary_menu'  => array(),
+		'respond' => array(
+			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'file'   => 'respond-min',
+			'deps'   => array( 'jquery' ),
+			'footer' => false,
+		),
+		'framework' => array(
+			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'file'   => 'framework-min',
+			'deps'   => array( 'jquery' ),
+			'footer' => true,
+		),
+		'theme' => array(
+			'path'     => get_stylesheet_directory_uri() . '/wireframe_client/js/',
+			'file'     => 'theme-min',
+			'deps'     => array( 'jquery' ),
+			'footer'   => true,
+			'localize' => array(
+				'nonce' => wp_create_nonce( '_' . WIREFRAME_THEME_TEXTDOMAIN . '_theme_nonce' ),
+			),
+		),
 	);
+
+	/**
+	 * Load media modal. This is primarily Plugin territory, but
+	 * it's only here for completeness. Most likely should remain false.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
+	 * @var   bool $media True loads wp_enqueue_media(). Default: false.
+	 * @todo  Should we contextually enqueue media modal?
+	 */
+	$mediamodal = false;
+
+	/**
+	 * Load default style.css. This should almost always be true.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
+	 * @var   bool $stylecss Default: true.
+	 */
+	$stylecss = true;
+
+	/**
+	 * Load comment-reply script. This is a WordPress script which
+	 * enables better UX for comment reply forms. Should always be true.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
+	 * @var   bool $commentjs Default: true.
+	 */
+	$commentjs = true;
+
+	/**
+	 * This object depends on the Core_Enqueue object, so we need to intantiate
+	 * the Core_Enqueue object and pass-in parameters.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
+	 * @var   object Core_Enqueue(
+	 *        @param string     $prefix     Required prefix for handles.
+	 *        @param array|null $styles     Optional styles.
+	 *        @param array|null $scripts    Optional scripts.
+	 *        @param bool|null  $mediamodal Optional media modal.
+	 *        @param bool|null  $stylecss   Optional main stylesheet.
+	 *        @param bool|null  $commentjs  Optional main comment-reply script.
+	 * )
+	 */
+	$enqueue = new Core_Enqueue( $prefix, $styles, $scripts, $mediamodal, $stylecss, $commentjs );
 
 	/**
 	 * Option #1: Return (array) of config data for passing into objects.
@@ -195,13 +286,11 @@ function wireframe_theme_config_navigation() {
 	 * @return array|object
 	 */
 	return array(
-		'wired'          => $wired,
-		'prefix'         => $prefix,
-		'actions'        => $actions,
-		'filters'        => $filters,
-		'primary_menu'   => $args['primary_menu'],
-		'secondary_menu' => $args['secondary_menu'],
-		'tertiary_menu'  => $args['tertiary_menu'],
+		'wired'   => $wired,
+		'prefix'  => $prefix,
+		'actions' => $actions,
+		'filters' => $filters,
+		'enqueue' => $enqueue,
 	);
 
 } // Thanks for using MixaTheme products!

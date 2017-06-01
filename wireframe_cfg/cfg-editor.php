@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme_UI config for modules built with Wireframe Suite for WordPress.
+ * Theme_Editor config for modules built with Wireframe Suite for WordPress.
  *
  * PHP version 5.6.0
  *
@@ -55,15 +55,16 @@ defined( 'ABSPATH' ) or die();
  * @since  1.0.0 Wireframe
  * @since  1.0.0 Wireframe Theme
  * @since  1.0.0 Wireframe Child
- * @see    object Theme_UI
+ * @see    object Theme_Editor
  * @return array  Default configuration values.
  */
-function wireframe_theme_config_ui() {
+function wireframe_theme_cfg_editor() {
 	/**
 	 * Wired.
 	 *
-	 * Wires the Theme_UI actions & filters at runtime. Since most themes
-	 * should have UI styles & scripts, this should usually be set to true.
+	 * Wires the Theme_Editor actions & filters at runtime. Most themes will probably
+	 * not modify the TinyMCE Editor, but more advanced themes will need to.
+	 * We set the default value to true for educational purposes.
 	 *
 	 * Note: Most objects can be wired to hook actions & filters when an object
 	 * is instantiated. This is optional, because some objects do not need any
@@ -103,29 +104,23 @@ function wireframe_theme_config_ui() {
 	 * @var   array $actions Actions to hook.
 	 */
 	$actions = array(
-		'styles' => array(
-			'tag'      => 'wp_enqueue_scripts',
-			'function' => 'styles',
+		'editor_style' => array(
+			'tag'      => 'after_setup_theme',
+			'function' => 'editor_style',
 			'priority' => 10,
 			'args'     => null,
 		),
-		'scripts' => array(
-			'tag'      => 'wp_enqueue_scripts',
-			'function' => 'scripts',
+		'buttons_2' => array(
+			'tag'      => 'mce_buttons_2',
+			'function' => 'buttons_2',
 			'priority' => 10,
-			'args'     => null,
+			'args'     => 1,
 		),
-		'stylecss' => array(
-			'tag'      => 'wp_enqueue_scripts',
-			'function' => 'stylecss',
+		'style_formats' => array(
+			'tag'      => 'tiny_mce_before_init',
+			'function' => 'style_formats',
 			'priority' => 10,
-			'args'     => null,
-		),
-		'comments' => array(
-			'tag'      => 'wp_enqueue_scripts',
-			'function' => 'commentjs',
-			'priority' => 10,
-			'args'     => null,
+			'args'     => 1,
 		),
 	);
 
@@ -145,128 +140,49 @@ function wireframe_theme_config_ui() {
 	$filters = array();
 
 	/**
-	 * Stylesheets to load.
+	 * Path to the `TinyMCE` editor custom stylesheet.
 	 *
 	 * @since 1.0.0 Wireframe
 	 * @since 1.0.0 Wireframe Theme
 	 * @since 1.0.0 Wireframe Child
-	 * @var   array $styles Array of stylesheets to enqueue.
+	 * @var   string $editor_style Path to the stylesheet.
 	 */
-	$styles = array(
-		'fontawesome' => array(
-			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
-			'file'  => 'font-awesome-min',
-			'deps'  => array(),
-			'media' => 'all',
+	$editor_style = WIREFRAME_THEME_CSS . 'editor-style-min';
+
+	/**
+	 * Add `Style Formats` arrays to the `TinyMCE` editor.
+	 *
+	 * You must also set the CSS in the `editor-style.scss` stylesheet.
+	 * End-Users: The `TinyMCE` editor's `Toolbar Toggle` button must be
+	 * clicked to reveal the `Formats` select dropdown menu.
+	 *
+	 * @since 1.0.0 Wireframe
+	 * @since 1.0.0 Wireframe Theme
+	 * @since 1.0.0 Wireframe Child
+	 * @var   array $style_formats Array of style formats.
+	 * @see   https://codex.wordpress.org/TinyMCE_Custom_Styles
+	 */
+	$style_formats = array(
+		array(
+			'title'    => __( 'Bootstrap Lead', 'wireframe-theme' ),
+			'selector' => 'p',
+			'block'    => 'div',
+			'classes'  => 'lead',
+			'wrapper'  => true,
 		),
-		'framework' => array(
-			'path'  => get_stylesheet_directory_uri() . '/wireframe_client/css/',
-			'file'  => 'framework-min',
-			'deps'  => array(),
-			'media' => 'screen',
+		array(
+			'title'  => __( 'Bootstrap Marked', 'wireframe-theme' ),
+			'inline' => 'mark',
 		),
-		'parent' => array(
-			'path'  => get_template_directory_uri(),
-			'file'  => 'style',
-			'deps'  => array(),
-			'media' => 'screen',
+		array(
+			'title'  => __( 'Bootstrap Code', 'wireframe-theme' ),
+			'inline' => 'code',
 		),
-		'theme' => array(
-			'path'  => get_stylesheet_directory_uri(),
-			'file'  => 'style',
-			'deps'  => array(),
-			'media' => 'screen',
+		array(
+			'title'  => __( 'Bootstrap KBD', 'wireframe-theme' ),
+			'inline' => 'kbd',
 		),
 	);
-
-	/**
-	 * Scripts to load.
-	 *
-	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe Theme
-	 * @since 1.0.0 Wireframe Child
-	 * @var   array $scripts Array of scripts to enqueue.
-	 */
-	$scripts = array(
-		'modernizr' => array(
-			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
-			'file'   => 'modernizr-min',
-			'deps'   => array( 'jquery' ),
-			'footer' => false,
-		),
-		'respond' => array(
-			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
-			'file'   => 'respond-min',
-			'deps'   => array( 'jquery' ),
-			'footer' => false,
-		),
-		'framework' => array(
-			'path'   => get_stylesheet_directory_uri() . '/wireframe_client/js/',
-			'file'   => 'framework-min',
-			'deps'   => array( 'jquery' ),
-			'footer' => true,
-		),
-		'theme' => array(
-			'path'     => get_stylesheet_directory_uri() . '/wireframe_client/js/',
-			'file'     => 'theme-min',
-			'deps'     => array( 'jquery' ),
-			'footer'   => true,
-			'localize' => array(
-				'nonce' => wp_create_nonce( '_' . WIREFRAME_THEME_TEXTDOMAIN . '_theme_nonce' ),
-			),
-		),
-	);
-
-	/**
-	 * Load media modal. This is primarily Plugin territory, but
-	 * it's only here for completeness. Most likely should remain false.
-	 *
-	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe Theme
-	 * @since 1.0.0 Wireframe Child
-	 * @var   bool $media True loads wp_enqueue_media(). Default: false.
-	 * @todo  Should we contextually enqueue media modal?
-	 */
-	$mediamodal = false;
-
-	/**
-	 * Load default style.css. This should almost always be true.
-	 *
-	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe Theme
-	 * @since 1.0.0 Wireframe Child
-	 * @var   bool $stylecss Default: true.
-	 */
-	$stylecss = true;
-
-	/**
-	 * Load comment-reply script. This is a WordPress script which
-	 * enables better UX for comment reply forms. Should always be true.
-	 *
-	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe Theme
-	 * @since 1.0.0 Wireframe Child
-	 * @var   bool $commentjs Default: true.
-	 */
-	$commentjs = true;
-
-	/**
-	 * This object depends on the Core_Enqueue object, so we need to intantiate
-	 * the Core_Enqueue object and pass-in parameters.
-	 *
-	 * @since 1.0.0 Wireframe
-	 * @since 1.0.0 Wireframe Theme
-	 * @since 1.0.0 Wireframe Child
-	 * @var   object Core_Enqueue(
-	 *        @param string     $prefix     Required prefix for handles.
-	 *        @param array|null $styles     Optional styles.
-	 *        @param array|null $scripts    Optional scripts.
-	 *        @param bool|null  $mediamodal Optional media modal.
-	 *        @param bool|null  $stylecss   Optional main stylesheet.
-	 *        @param bool|null  $commentjs  Optional main comment-reply script.
-	 * )
-	 */
-	$enqueue = new Core_Enqueue( $prefix, $styles, $scripts, $mediamodal, $stylecss, $commentjs );
 
 	/**
 	 * Option #1: Return (array) of config data for passing into objects.
@@ -286,11 +202,12 @@ function wireframe_theme_config_ui() {
 	 * @return array|object
 	 */
 	return array(
-		'wired'   => $wired,
-		'prefix'  => $prefix,
-		'actions' => $actions,
-		'filters' => $filters,
-		'enqueue' => $enqueue,
+		'wired'         => $wired,
+		'prefix'        => $prefix,
+		'actions'       => $actions,
+		'filters'       => $filters,
+		'editor_style'  => $editor_style,
+		'style_formats' => $style_formats,
 	);
 
 } // Thanks for using MixaTheme products!
